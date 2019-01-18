@@ -1,9 +1,12 @@
 var express = require('express');
+// use express.Router class to create modular, mountable route handlers
 var router = express.Router();
 
-/* GET home page. */
+// GET home page
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  console.log("@@@@ server index router");
+  // res.render('index', { title: 'Ethan' });
+  // req
 });
 
 module.exports = router;
