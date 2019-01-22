@@ -10,6 +10,10 @@ var usersRouter = require('./routes/users');
 // start app
 var app = express();
 
+// dynamic port binding, picked from Heroku, fallback to 5000
+const PORT = process.env.PORT || 5000;
+app.listen(PORT);
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
