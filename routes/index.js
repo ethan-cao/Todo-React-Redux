@@ -3,7 +3,7 @@ var express = require('express');
 var router = express.Router();
 
 // GET home page
-router.get('/', function(req, res, next) {
+router.get('/api/index', function(req, res, next) {
   console.log("@@@@ server index router");
   res.render('index', { title: 'Ethan' });
 });
