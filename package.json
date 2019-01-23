@@ -1,11 +1,11 @@
 {
-  "name": "todoapp",
+  "name": "TodoApp",
   "version": "0.0.0",
-  "main": "app.js",
+  "main": "index.js",
   "private": true,
   "scripts": {
     "www": "node ./bin/www",
-    "server": "nodemon --inspect app.js",
+    "server": "nodemon --inspect index.js",
     "client": "npm run start  --prefix client",
     "dev" : "concurrently \"npm run server\" \"npm run client\"" 
   },
