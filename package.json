@@ -7,17 +7,20 @@
     "www": "node ./bin/www",
     "server": "nodemon --inspect index.js",
     "client": "npm run start  --prefix client",
-    "dev" : "concurrently \"npm run server\" \"npm run client\"" 
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "dependencies": {
+    "aws-sdk": "^2.392.0",
+    "body-parser": "latest",
+    "concurrently": "^3.6.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
+    "ejs": "latest",
     "express": "~4.16.4",
     "http-errors": "~1.6.2",
-    "morgan": "~1.9.0",
-    "pug": "2.0.0-beta11",
-    "nodemon": "^1.18.8",
     "lodash": "^4.17.11",
-    "concurrently": "^3.6.1"
+    "morgan": "~1.9.0",
+    "nodemon": "^1.18.8",
+    "pug": "2.0.0-beta11"
   }
 }
