@@ -1,3 +1,3 @@
 AWS EB, DynamoDB
-Node, Express  
-React, Redux 
+Node, Express
+React, Redux
