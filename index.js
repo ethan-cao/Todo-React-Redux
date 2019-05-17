@@ -1,10 +1,19 @@
-var express = require('express');
+const express = require("express"); 
+var bodyParser = require('body-parser');
+
+
+var port = process.env.PORT || 3000;
 
 // start app
 var app = express();
 
-// dynamic port binding, picked from Heroku, fallback to 5000
-const PORT = process.env.PORT || 5000;
-app.listen(PORT);
+
+app.get('/', (req, res) => {
+  res.send("deployed");
+});
+
+app.listen(port, () => {
+  console.log("Server listening at port " + port);
+});
 
 app.use(express.json()); // assign to req.body
