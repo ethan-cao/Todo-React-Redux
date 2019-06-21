@@ -1,19 +1,17 @@
+const path = require('path');
 const express = require("express"); 
-var bodyParser = require('body-parser');
-
-
-var port = process.env.PORT || 3000;
 
 // start app
 var app = express();
 
+app.use(express.static(path.join(__dirname, 'client', 'build')));
 
 app.get('/', (req, res) => {
   res.send("deployed");
 });
 
+// EB runs NodeJS application at port 8081 by default 
+const port = process.env.PORT || 8081;
 app.listen(port, () => {
   console.log("Server listening at port " + port);
 });
-
-app.use(express.json()); // assign to req.body
