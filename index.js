@@ -4,6 +4,8 @@ const express = require("express");
 // start app
 var app = express();
 
+console.log("@@@ path: " + path.join(__dirname, 'client', 'build'));
+
 app.use(express.static(path.join(__dirname, 'client', 'build')));
 
 app.get('/', (req, res) => {
