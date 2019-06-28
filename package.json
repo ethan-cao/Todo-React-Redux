@@ -4,8 +4,9 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "server": "nodemon --inspect index.js",
-    "client": "npm run start  --prefix client",
+    "start" : "node ./index.js",
+    "server": "nodemon --inspect ./index.js",
+    "client": "npm run start  --prefix ./client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "dependencies": {
