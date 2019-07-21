@@ -10,8 +10,8 @@ app.listen(port, () => {
 });
 
 const staticPath = path.join(__dirname, 'client', 'build');
-app.use(express.static(staticPath));
 // console.log("@@@ path: " + staticPath );
+app.use(express.static(staticPath));
 
 app.get("*", (req, res) => {
   res.send("deployed");

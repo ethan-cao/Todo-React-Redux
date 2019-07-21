@@ -23,6 +23,9 @@ class Header extends React.Component{
             return;
         }
 
+        // since connect(), this.props has access to all actions
+        // it calls action creator with the parameter, then call dispatch() with new action
+        // dispatch sends actions to reducer to produce new state and causes re-render
         this.props.addTodo(this.state.newTodo);
 
         this.setState({newTodo: ""});
@@ -40,8 +43,7 @@ class Header extends React.Component{
     }
 }
 
-// use connect() so this.props has access to action
+// connect(mapStateToProps, mapDispatchToProps, mergeProps, options) connects a React component to a Redux store
+// so component this.props has access to action
+// this.props.dispatch === store.dispatch // true
 export default connect(null, actions)(Header);
-
-// just call connect(), this.props.dispatch is accessible,   this.props.dispatch === store.dispatch // true
-// export default connect()(Header);
