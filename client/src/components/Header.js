@@ -2,6 +2,10 @@ import React from "react";
 import {connect} from "react-redux";
 import * as actions from "../actions/index";
 
+/*
+    Header component is actually container component since it has state, 
+    for simplicity, we just redner without representational component
+*/
 class Header extends React.Component{
     constructor(props){
         super(props);
@@ -24,7 +28,7 @@ class Header extends React.Component{
         }
 
         // since connect(), this.props has access to all actions
-        // it calls action creator with the parameter, then call dispatch() with new action
+        // it calls action creator with the parameter to create an action, then call dispatch() with returned action
         // dispatch sends actions to reducer to produce new state and causes re-render
         this.props.addTodo(this.state.newTodo);
 
@@ -44,6 +48,7 @@ class Header extends React.Component{
 }
 
 // connect(mapStateToProps, mapDispatchToProps, mergeProps, options) connects a React component to a Redux store
-// so component this.props has access to action
-// this.props.dispatch === store.dispatch // true
+// Check VisibilityTodoList for more details
+// if mapDispatchToProps is an object, connect will automatically call bindActionCreators for you internally
+// just mapDispatchToProps in VisibilityTodoList
 export default connect(null, actions)(Header);

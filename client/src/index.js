@@ -12,7 +12,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducers, {}, composeEnhancers(applyMiddleware(reduxThunk)));
 
 ReactDOM.render(
-    <Provider store={store}>
+    <Provider store={store}>  // provide access to redux store for component and its children
         <App/>
     </Provider>, 
     document.querySelector('#root')

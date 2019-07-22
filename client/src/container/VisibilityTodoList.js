@@ -16,22 +16,26 @@ const getVisibleTodos = (todos, filter) => {
     }
 }
 
-//this component will subscribe to Redux store updates. 
-//when the store is updated,  mapStateToProps will be called.
-// mapStateToProps returns a plain object, which will be merged into the component’s props.
-// state is the global state (state = store.getState())
-// state.todo, key "todo" is set by reducers/index.js
 const mapStateToProps = state => (
+    // state.todo, key "todo" is set by reducers/index.js
     { todos: getVisibleTodos(state.todo, state.visibilityfilter) }
 );
 
-// https://gist.github.com/markerikson/6c7608eee5d2421966d3df5edbb8f05c
 const mapDispatchToProps = dispatch => (
-    // bindActionCreator return function, which makes the action creator be able to be invoked directly
+    // bindActionCreator returns function, which makes the action creator be able to be invoked directly
     bindActionCreators({toggle: actions.toggle, remove: actions.remove}, dispatch)
-    // alternatively, check Header mapDispatchToProps
+    // check Header mapDispatchToProps as an object
 );
 
-// https://github.com/reduxjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options
-// use connect() so this.props has access to action toggle
+/**
+use connect() to connect react component to redux store, used within Provider
+
+mapStateToProps() subscribe component to Redux store change, 
+which means mapStateToProps() is invoked when store is changed
+it returns an object, which will be merged into the component’s props.
+
+mapDispatchToProps gives component.props access to action creator
+    it could be function mapDispatchToProps(dispatch, ownProps), returns an object containing action creator with dipatch bound
+    it could be object, where each field is an action creator
+ */
 export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
