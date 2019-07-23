@@ -8,8 +8,7 @@ import Todo from "./Todo";
  */
 export default class TodoList extends React.Component {
     render() {
-        // extract toggle value from this.props, results in  toogle = this.props.toggle, remove = this.props.remove
-        const {toggle, remove} = this.props;  
+        // since TodoList is connected  in VisibilityTodoList using mapDispatchToProps, this.props has access to toggle and remove actions
 
         return (
             <div id="todoList">
@@ -17,8 +16,8 @@ export default class TodoList extends React.Component {
                     {this.props.todos.map( 
                         todo => <Todo key={todo.id} 
                                       title={todo.title} 
-                                      toggle={()=>toggle(todo.id)} 
-                                      remove={()=>{remove(todo.id)}} 
+                                      toggle={()=>this.props.toggle(todo.id)} 
+                                      remove={()=>this.props.remove(todo.id)} 
                                       isDone={todo.isDone}
                                 />
                     , this)}

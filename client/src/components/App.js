@@ -4,7 +4,7 @@ import VisibleTodoList from "../container/VisibilityTodoList";
 import Footer from "./Footer";
 
 export default class App extends Component {
-  // A component must have at least the render() function
+  // A class component must have at least the render() function
   render() {
     return (
       <div>

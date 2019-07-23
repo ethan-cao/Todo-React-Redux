@@ -21,11 +21,18 @@ const mapStateToProps = state => (
     { todos: getVisibleTodos(state.todo, state.visibilityfilter) }
 );
 
-const mapDispatchToProps = dispatch => (
+const mapDispatchToProps = (dispatch, ownProps) => (
     // bindActionCreator returns function, which makes the action creator be able to be invoked directly
     bindActionCreators({toggle: actions.toggle, remove: actions.remove}, dispatch)
     // check Header mapDispatchToProps as an object
 );
+
+// equivalent alternative to mapDispatchToProps
+const mapDispatchToProps1 = {
+    toggle : actions.toggle,
+    remove : actions.remove
+};
+
 
 /**
 use connect() to connect react component to redux store, used within Provider
@@ -36,6 +43,6 @@ it returns an object, which will be merged into the component’s props.
 
 mapDispatchToProps gives component.props access to action creator
     it could be function mapDispatchToProps(dispatch, ownProps), returns an object containing action creator with dipatch bound
-    it could be object, where each field is an action creator
+    it could be object, where each field is an action creator, and connect() will automatically call bindActionCreators for actions
  */
-export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
+export default connect(mapStateToProps, mapDispatchToProps1)(TodoList);
