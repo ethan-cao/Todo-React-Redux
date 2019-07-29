@@ -9,11 +9,13 @@ app.listen(port, () => {
   console.log("Server listening at port " + port);
 });
 
-const staticPath = path.join(__dirname, 'client', 'build');
-// console.log("@@@ path: " + staticPath );
-app.use(express.static(staticPath));
-
-app.get("*", (req, res) => {
-  res.send("deployed");
-  // res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+// Router
+app.get("/test", (req, res) => {
+  res.send("App deployed.");
 });
+
+// if request is not recognized, look into pre-built resource in client/build
+const staticPath = path.join(__dirname, 'client', 'build');
+app.use(express.static(staticPath));
+console.log("@@@ path: " + staticPath );
+

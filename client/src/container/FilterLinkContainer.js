@@ -2,6 +2,9 @@ import {connect} from  "react-redux";
 import {setVisibilityFilter} from "../actions";
 import FilterLink from "../components/FilterLink";
 
+// ownProps in both mapStateToProps and mapDispatchToProps 
+// is props passed to this component FilterLinkContainer
+// it is also accessible in FilterLink
 const mapStateToProps = (state, ownProps) => ({
     active : ownProps.filter === state.visibilityFilter
 });

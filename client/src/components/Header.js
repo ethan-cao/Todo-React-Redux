@@ -35,6 +35,10 @@ class Header extends React.Component{
         this.setState({newTodo: ""});
     }
 
+    componentDidMount(){
+        console.log("componentDidMount!");
+    }
+
     render() {
         return (
             <div id="header">

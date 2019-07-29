@@ -1,22 +1,23 @@
 import React from "react";
-import FilterLink from "../container/FilterLink";
+import FilterLinkContainer from "../container/FilterLinkContainer";
 import {VisibilityFilters} from "../actions";
 
+// Function component
 const Footer = () => (
-    < div>
-        <span > Show: </span> 
+    <div>
+        <span> Show: </span> 
 
-        <FilterLink filter = {VisibilityFilters.SHOW_ALL} >
-        All 
-        </FilterLink> 
+        <FilterLinkContainer filter = {VisibilityFilters.SHOW_ALL} >
+            All 
+        </FilterLinkContainer> 
         
-        <FilterLink filter = {VisibilityFilters.SHOW_ACTIVE} >
-        Active
-        </FilterLink> 
+        <FilterLinkContainer filter = {VisibilityFilters.SHOW_ACTIVE} >
+            Active
+        </FilterLinkContainer> 
         
-        <FilterLink filter = {VisibilityFilters.SHOW_COMPLETED } >
-        Completed
-        </FilterLink>
+        <FilterLinkContainer filter = {VisibilityFilters.SHOW_COMPLETED } >
+            Completed
+        </FilterLinkContainer>
     </div>
 );
 

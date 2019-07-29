@@ -9,7 +9,6 @@ import Todo from "./Todo";
 export default class TodoList extends React.Component {
     render() {
         // since TodoList is connected  in VisibilityTodoList using mapDispatchToProps, this.props has access to toggle and remove actions
-
         return (
             <div id="todoList">
                 <ul>
@@ -25,8 +24,4 @@ export default class TodoList extends React.Component {
             </div>
         );
     }
-}
-
-TodoList.defaultProps = {
-    todos : []
 }

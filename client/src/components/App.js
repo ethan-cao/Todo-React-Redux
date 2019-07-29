@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import Header from "./Header";
-import VisibleTodoList from "../container/VisibilityTodoList";
+import VisibleTodoList from "../container/VisibilityTodoContainer";
 import Footer from "./Footer";
 
 export default class App extends Component {

@@ -4,6 +4,8 @@ import * as actions from "../actions/index";
 const todoReducer = (state=[], action) => {
     switch(action.type){
         case actions.ADD : 
+             // call my server aync
+             //    
             return [...state, {id : action.id, title: action.title, isDone:false}];
         case actions.REMOVE :
             return state.filter( todo => todo.id !== action.id);

@@ -13,6 +13,8 @@ export const VisibilityFilters = {
 
 let todoId = 0;
 
+// 4 action creators, each returns an action
+
 export const addTodo = (todo) => {
     return {
         type : ADD,
