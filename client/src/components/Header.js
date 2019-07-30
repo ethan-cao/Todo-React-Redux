@@ -41,10 +41,18 @@ class Header extends React.Component{
 
     render() {
         return (
-            <div id="header">
-                <form onSubmit = {this.handleAddTodo} >
-                    <input type="text" value={this.state.newTodo} onChange={this.handleChange}/>
-                    <button type="submit">Add</button>
+            <div id="header" className="row">
+                <form className="col s12" onSubmit = {this.handleAddTodo} >
+                    <div className="input-field col s6">
+                        <i id="icon_prefix" className="material-icons prefix">bookmark</i>
+                        <input id="newTODOItem" type="text" 
+                            value={this.state.newTodo} onChange={this.handleChange}/>
+                        <label htmlFor="newTODOItem"className="active" >New todo item</label>
+                        <button type="submit" className="waves-effect right btn">
+                            Add
+                            <i className="material-icons right">add</i>
+                        </button>
+                    </div>
                 </form>
             </div>    
         );
