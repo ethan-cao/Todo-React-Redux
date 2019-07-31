@@ -44,7 +44,7 @@ class Header extends React.Component{
             <div id="header" className="row">
                 <form className="col s12" onSubmit = {this.handleAddTodo} >
                     <div className="input-field col s6">
-                        <i id="icon_prefix" className="material-icons prefix">bookmark</i>
+                        <i id="icon_prefix" className="material-icons prefix">assignment</i>
                         <input id="newTODOItem" type="text" 
                             value={this.state.newTodo} onChange={this.handleChange}/>
                         <label htmlFor="newTODOItem"className="active" >New todo item</label>
