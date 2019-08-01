@@ -48,9 +48,8 @@ class Header extends React.Component{
                         <input id="newTODOItem" type="text" 
                             value={this.state.newTodo} onChange={this.handleChange}/>
                         <label htmlFor="newTODOItem"className="active" >New todo item</label>
-                        <button type="submit" className="waves-effect right btn">
-                            Add
-                            <i className="material-icons right">add</i>
+                        <button type="submit" className="waves-effect right btn" data-testid="add-button">
+                            Add<i className="material-icons right">add</i>
                         </button>
                     </div>
                 </form>
