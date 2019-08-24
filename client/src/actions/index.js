@@ -3,6 +3,8 @@
 export const ADD = "add todo";
 export const REMOVE = "remove todo";
 export const TOGGLE = "toggle todo";
+export const UNDO = "undo";
+export const REDO = "redo";
 export const SET_FILTER = "set visibility filter";
 
 export const VisibilityFilters = {

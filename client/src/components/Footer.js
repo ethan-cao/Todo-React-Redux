@@ -8,9 +8,6 @@ const Footer = () => (
         <FilterLinkContainer filter= {VisibilityFilters.SHOW_ALL}>All</FilterLinkContainer> 
         <FilterLinkContainer filter= {VisibilityFilters.SHOW_ACTIVE}>Active</FilterLinkContainer>  
         <FilterLinkContainer filter= {VisibilityFilters.SHOW_COMPLETED}>Completed</FilterLinkContainer> 
-                <div className="row">
-
-        </div>
     </div>
 );
 

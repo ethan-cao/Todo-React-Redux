@@ -1,11 +1,10 @@
 import * as actions from "../actions/index";
-// import {ADD, REMOVE, TOGGLE} from '../actions/index';
+import undoable from "./undoReducer.js";
 
 const todoReducer = (state=[], action) => {
     switch(action.type){
         case actions.ADD : 
-             // call my server aync
-             //    
+             // call server aync
             return [...state, {id : action.id, title: action.title, isDone:false}];
         case actions.REMOVE :
             return state.filter( todo => todo.id !== action.id);
@@ -20,3 +19,5 @@ const todoReducer = (state=[], action) => {
 }
 
 export default todoReducer;
+// const undoableTodos = undoable(todoReducer, {});
+// export default undoableTodos
