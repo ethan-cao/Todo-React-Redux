@@ -4,13 +4,15 @@ import {bindActionCreators} from 'redux';
 import TodoList from '../components/TodoList';
 
 const getVisibleTodos = (todos, filter) => {
+    const presentTodos = todos.present;
+
     switch(filter){
         case actions.VisibilityFilters.SHOW_ALL:
-            return todos;
+            return presentTodos;
         case actions.VisibilityFilters.SHOW_COMPLETED :
-            return todos.filter( todo => todo.isDone);
+            return presentTodos.filter( todo => todo.isDone);
         case actions.VisibilityFilters.SHOW_ACTIVE:
-            return todos.filter( todo => !todo.isDone);
+            return presentTodos.filter( todo => !todo.isDone);
         default:
             throw new Error("Unknown filter : " + filter);
     }

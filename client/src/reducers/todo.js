@@ -1,7 +1,7 @@
 import * as actions from "../actions/index";
-import undoable from "./undoReducer.js";
+import undoable from "./undoable";
 
-const todoReducer = (state=[], action) => {
+const todo = (state=[], action) => {
     switch(action.type){
         case actions.ADD : 
              // call server aync
@@ -18,6 +18,6 @@ const todoReducer = (state=[], action) => {
     }
 }
 
-export default todoReducer;
-// const undoableTodos = undoable(todoReducer, {});
-// export default undoableTodos
+// export default todo;
+
+export default undoable(todo);

@@ -36,7 +36,7 @@ class Header extends React.Component{
     }
 
     componentDidMount(){
-        console.log("componentDidMount!");
+        console.log("componentDidMount");
     }
 
     render() {
