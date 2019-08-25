@@ -4,7 +4,6 @@ import undoable from "./undoable";
 const todo = (state=[], action) => {
     switch(action.type){
         case actions.ADD : 
-             // call server aync
             return [...state, {id : action.id, title: action.title, isDone:false}];
         case actions.REMOVE :
             return state.filter( todo => todo.id !== action.id);
@@ -17,7 +16,5 @@ const todo = (state=[], action) => {
             return state;
     }
 }
-
-// export default todo;
 
 export default undoable(todo);
