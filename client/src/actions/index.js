@@ -15,8 +15,7 @@ export const VisibilityFilters = {
 
 let todoId = 0;
 
-// 4 action creators, each returns an action
-
+// below are action creators, each returns an action
 export const addTodo = (todo) => {
     return {
         type : ADD,
@@ -25,23 +24,25 @@ export const addTodo = (todo) => {
     }
 };
 
-export const remove = (id) => {
-    return {
-        type : REMOVE,
-        id
-    }
-}
+export const remove = (id) => ({
+    type : REMOVE,
+    id
+});
 
-export const toggle = id => (
-    {
-        type : TOGGLE,
-        id
-    }
-);
+export const toggle = id => ({
+    type : TOGGLE,
+    id
+});
 
-export const setVisibilityFilter = filter => {
-    return {
-        type: SET_FILTER,
-        filter
-    }
-}
+export const setVisibilityFilter = filter => ({
+    type: SET_FILTER,
+    filter
+});
+
+export const undo = () => ({
+    type : UNDO,
+});
+
+export const redo = () => ({
+    type : REDO,
+});

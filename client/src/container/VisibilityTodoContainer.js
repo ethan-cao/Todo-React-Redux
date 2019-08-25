@@ -20,7 +20,7 @@ const getVisibleTodos = (todos, filter) => {
 
 const mapStateToProps = state => (
     // state.todo, key "todo" is set by reducers/index.js
-    { todos: getVisibleTodos(state.todo, state.visibilityfilter) }
+    { todos: getVisibleTodos(state.todos, state.visibilityfilter) }
 );
 
 const mapDispatchToProps = (dispatch, ownProps) => (
