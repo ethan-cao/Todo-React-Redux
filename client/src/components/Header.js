@@ -1,6 +1,9 @@
 import React from "react";
 import {connect} from "react-redux";
+
 import * as actions from "../actions/index";
+
+import "./Header.scss"; // Create React App knows how to parse .scss files and add the style
 
 /*
     Header component is actually container component since it has state, 
