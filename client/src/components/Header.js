@@ -10,7 +10,8 @@ import "./Header.scss"; // Create React App knows how to parse .scss files and a
     for simplicity, we just redner without representational component
 */
 class Header extends React.Component{
-    constructor(props){
+
+    constructor(props) {
         super(props);
 
         this.state = {newTodo:""};
@@ -39,18 +40,17 @@ class Header extends React.Component{
     }
 
     componentDidMount(){
-        console.log("componentDidMount");
+        console.log("Header componentDidMount");
     }
 
     render() {
         return (
             <div id="header" className="row">
-                <form className="col s12" onSubmit = {this.handleAddTodo} >
+                <form className="col s12" onSubmit={this.handleAddTodo} >
                     <div className="input-field col s6">
                         <i id="icon_prefix" className="material-icons prefix">assignment</i>
-                        <input id="newTODOItem" type="text" 
-                            value={this.state.newTodo} onChange={this.handleChange}/>
-                        <label htmlFor="newTODOItem"className="active" >New todo item</label>
+                        <input id="newTODOItem" type="text" value={this.state.newTodo} onChange={this.handleChange}/>
+                        <label htmlFor="newTODOItem" className="active" >New todo item</label>
                         <button type="submit" className="waves-effect right btn" data-testid="add-button">
                             Add<i className="material-icons right">add</i>
                         </button>

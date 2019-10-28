@@ -12,6 +12,8 @@ import reducers from "./reducers";  // automatically access ./reducers/index.js
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducers, {}, composeEnhancers(applyMiddleware(reduxThunk)));
 
+// test purpose
+window.store = store;
 
 // use provider to give component and its children access to store
 ReactDOM.render(

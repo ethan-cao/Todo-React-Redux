@@ -20,7 +20,7 @@ const getVisibleTodos = (todos, filter) => {
 
 const mapStateToProps = state => (
     // state.todo, key "todo" is set by reducers/index.js
-    { todos: getVisibleTodos(state.todos, state.visibilityfilter) }
+    {todos: getVisibleTodos(state.todos, state.visibilityfilter)}
 );
 
 const mapDispatchToProps = (dispatch, ownProps) => (
@@ -35,15 +35,15 @@ const mapDispatchToProps1 = {
     remove : actions.remove
 };
 
+/*
+connect(mapStateToProps, mapDispatchToProps, mergeProps, options) connects a React component to a Redux store
+used within Provider
 
-/**
-use connect() to connect react component to redux store, used within Provider
-
-mapStateToProps() subscribe component to Redux store change, 
+mapStateToProps(state) subscribes component to Redux store change, 
 which means mapStateToProps() is invoked when store is changed
 it returns an object, which will be merged into the component’s props.
 
-mapDispatchToProps gives component.props access to action creator
+mapDispatchToProps gives component.props access to action creator and dipatch aciton automatically
     it could be function mapDispatchToProps(dispatch, ownProps), returns an object containing action creator with dipatch bound
     it could be object, where each field is an action creator, and connect() will automatically call bindActionCreators for actions
  */

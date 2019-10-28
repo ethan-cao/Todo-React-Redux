@@ -24,7 +24,7 @@ export const addTodo = (todo) => {
     }
 };
 
-export const remove = (id) => ({
+export const remove = id => ({
     type : REMOVE,
     id
 });
