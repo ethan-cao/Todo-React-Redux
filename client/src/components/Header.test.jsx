@@ -1,7 +1,6 @@
 import React from 'react';
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
-import {todoReducer} from "../reducers/todoReducer.js";
 import Header from "./Header";
 import {render, fireEvent, cleanup} from '@testing-library/react';
 

@@ -1,4 +1,6 @@
 import "materialize-css/dist/css/materialize.min.css";  // no path means importing from node_modules
+import "./styles/main.scss";  // since installed node-sass
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from "react-redux";
