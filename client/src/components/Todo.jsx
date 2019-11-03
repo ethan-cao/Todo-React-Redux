@@ -3,7 +3,7 @@ import React, {Component} from "react"
 export default class TODO extends Component {
     render(){
         return (
-            <div>
+            <div className="todo">
                 <label>
                     <input type="checkbox" onClick={this.props.toggle} checked={this.props.isDone} onChange={()=>(1)}/>
                     <span style={{marginRight: '5px', textDecoration: this.props.isDone? 'line-through': 'none'}}> {this.props.title} </span>

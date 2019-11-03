@@ -4,7 +4,7 @@ import VisibleTodoList from "../container/VisibilityTodoContainer";
 import Footer from "./Footer";
 
 const App = () => (
-    <div>
+    <div id="app">
       <Header/>
       <VisibleTodoList/>
       <Footer/>
