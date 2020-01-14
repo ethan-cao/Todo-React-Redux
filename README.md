@@ -10,6 +10,6 @@ Frontend:
     task runner: npm  
     transpiler: webpack(complie code to one or more bundle, which can be used in a target environment)  
 
-Backend:
-    Node, Express, 
+Backend:  
+    Node, Express  
     TODO : GraphQL, AWS EB, DynamoDB
