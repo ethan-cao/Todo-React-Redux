@@ -2,7 +2,7 @@
 
 Frontend:
     view: React
-    model: Redux
+    model: Redux (logger: redux-logger)
     utility: Lodash
     test: Jest
     doc: JSDoc, TypeDoc
@@ -11,5 +11,7 @@ Frontend:
     transpiler: webpack(complie code to one or more bundle, which can be used in a target environment)
     // try https://bit.ly/2WzP3by
 
+
 Backend:
-    Node, Express, GraphQL, AWS EB, DynamoDB
+    Node, Express, 
+    TODO : GraphQL, AWS EB, DynamoDB
