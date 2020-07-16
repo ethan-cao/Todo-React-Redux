@@ -23,7 +23,7 @@
     "ejs": "latest",
     "express": "latest",
     "http-errors": "~1.6.2",
-    "lodash": ">=4.17.13",
+    "lodash": ">=4.17.19",
     "materialize-css": "^1.0.0-rc.2",
     "node": "latest",
     "nodemon": "latest"
