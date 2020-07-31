@@ -18,13 +18,18 @@ const getVisibleTodos = (todos, filter) => {
     }
 }
 
+// select pieces of the state that are relevant to this component.
+// what you select determines what aspects of the state that we're "subscribed to."
+// it determineswhether or not the component re-renders, select the minimal u need
+// param state is entire application state object as returned by calling store.getState()
 const mapStateToProps = state => (
     // state.todo, key "todo" is set by reducers/index.js
     {todos: getVisibleTodos(state.todos, state.visibilityfilter)}
 );
 
 const mapDispatchToProps = (dispatch, ownProps) => (
-    // bindActionCreator returns function, which makes the action creator be able to be invoked directly
+    // bindActionCreator() returns an object with all the same keys as 1st param
+    // bind action creator to dispatch
     bindActionCreators({toggle: actions.toggle, remove: actions.remove}, dispatch)
     // check Header mapDispatchToProps as an object
 );
@@ -36,15 +41,25 @@ const mapDispatchToProps1 = {
 };
 
 /*
-connect(mapStateToProps, mapDispatchToProps, mergeProps, options) connects a React component to a Redux store
-used within Provider
+connect(mapStateToProps, mapDispatchToProps, mergeProps, options) :
+    connects a React component to a Redux store used within Provider by taking a reference to the store from the context API and then calling store.subscribe() internally.
+    
 
-mapStateToProps(state) subscribes component to Redux store change, 
-which means mapStateToProps() is invoked when store is changed
-it returns an object, which will be merged into the component’s props.
+mapStateToProps(state):
+    returns an object, which will be merged into the component’s props.
+    subscribes component to Redux store change, meaning mapStateToProps() is invoked when store is changed
+    whenever got a new state, it returns a new mapped object
+    connect() checks if any value in the object is different (===) from the object it got last time from mapStateToProps(),
+    if there is change, the component re-renders
 
 mapDispatchToProps gives component.props access to action creator and dipatch aciton automatically
     it could be function mapDispatchToProps(dispatch, ownProps), returns an object containing action creator with dipatch bound
     it could be object, where each field is an action creator, and connect() will automatically call bindActionCreators for actions
  */
 export default connect(mapStateToProps, mapDispatchToProps1)(TodoList);
+
+/*
+    the connected component re-renders when either:
+        Any parent component that renders this one passes it a different prop
+        Any of the values on the object returned by mapStateToProps() are different
+*/
