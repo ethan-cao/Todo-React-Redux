@@ -20,7 +20,7 @@ const getVisibleTodos = (todos, filter) => {
 
 // select pieces of the state that are relevant to this component.
 // what you select determines what aspects of the state that we're "subscribed to."
-// it determineswhether or not the component re-renders, select the minimal u need
+// it determines whether or not the component re-renders, select the minimal u need
 // param state is entire application state object as returned by calling store.getState()
 const mapStateToProps = state => (
     // state.todo, key "todo" is set by reducers/index.js
@@ -52,8 +52,8 @@ mapStateToProps(state):
     connect() checks if any value in the object is different (===) from the object it got last time from mapStateToProps(),
     if there is change, the component re-renders
 
-mapDispatchToProps gives component.props access to action creator and dipatch aciton automatically
-    it could be function mapDispatchToProps(dispatch, ownProps), returns an object containing action creator with dipatch bound
+mapDispatchToProps gives component.props access to action creator and dispatch action automatically
+    it could be function mapDispatchToProps(dispatch, ownProps), returns an object containing action creator with dispatch bound
     it could be object, where each field is an action creator, and connect() will automatically call bindActionCreators for actions
  */
 export default connect(mapStateToProps, mapDispatchToProps1)(TodoList);
